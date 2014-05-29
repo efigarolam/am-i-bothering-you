@@ -3,7 +3,7 @@ class NotifyBullyMailer < MandrillMailer::TemplateMailer
 
   def mail(complaint)
     mandrill_mail template: 'notify-bully',
-                  subject: 'You are bothering to somebody',
+                  subject: 'You are bothering somebody',
                   to: complaint.bully.email,
                   vars: {
                     'message'  => complaint.message,
