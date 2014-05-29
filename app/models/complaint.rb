@@ -10,7 +10,7 @@ class Complaint < ActiveRecord::Base
   end
 
   def is_there_an_existing_complaint?
-    complaints = Complaint.where('bully_id = ? AND created_at BETWEEN ? AND ?', bully.id, Time.zone.now - 30.minutes, Time.zone.now)
+    complaints = Complaint.where('bully_id = ? AND created_at BETWEEN ? AND ?', bully.id, Time.zone.now - 5.minutes, Time.zone.now)
     complaints.any?
   end
 
