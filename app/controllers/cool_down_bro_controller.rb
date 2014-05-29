@@ -1,7 +1,9 @@
 class CoolDownBroController < ApplicationController
   before_action :find_bully
 
-  def index; end
+  def index
+    @complaint = Complaint.new(bully: @bully)
+  end
 
   def create
     if @bully.present?

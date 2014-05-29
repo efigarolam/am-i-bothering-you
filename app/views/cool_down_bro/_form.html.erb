@@ -1,0 +1,6 @@
+<%= form_for(complaint) do |f| %>
+  <%= f.hidden_field :bully_id %>
+  <%= f.text_field :message %>
+  <%= f.submit :create %>
+<% end %>
+

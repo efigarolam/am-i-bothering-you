@@ -1,0 +1,8 @@
+<% if @complaint.bully.present? %>
+  <%= render partial: 'cool_down_bro/form', locals: { complaint: @complaint } %>
+<% else %>
+  <div>
+    <p>It seems like nobody is bothering you...</p>
+  </div>
+<% end %>
+
