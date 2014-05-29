@@ -4,6 +4,7 @@ class CoolDownBroController < ApplicationController
   def index
     @complaint = Complaint.new(bully: @bully)
     @complaints = Complaint.all
+    @bullies = Bully.all
   end
 
   def create
@@ -13,6 +14,7 @@ class CoolDownBroController < ApplicationController
       NotifyBullyMailer.mail(complaint).deliver
 
       @complaints = Complaint.all
+      @bullies = Bully.all
       render :index
     else
       render :error

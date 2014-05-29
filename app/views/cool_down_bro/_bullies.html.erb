@@ -1,0 +1,9 @@
+<div class="bullies">
+  <h4>New Complaint</h4>
+  <ul class="list-unstyled">
+    <% @bullies.each do |bully| %>
+      <li><%= link_to bully.username, root_path(bully: bully.username) %></li>
+    <% end %>
+  </ul>
+</div>
+
