@@ -1,6 +1,7 @@
 class Complaint < ActiveRecord::Base
   belongs_to :bully
 
+  validates :message, presence: true
   validate :so_many_complaints
 
   def so_many_complaints
