@@ -1,8 +1,13 @@
-<% if @complaint.bully.present? %>
+<% if @complaint && @complaint.bully.present? %>
+  <div class="jumbotron">
+    <h2>Is <%= @complaint.bully.username %> bothering you?</h2>
+    <p>Don't be shy</p>
+  </div>
+
   <%= render partial: 'cool_down_bro/form', locals: { complaint: @complaint } %>
 <% else %>
-  <div>
-    <p>It seems like nobody is bothering you...</p>
+  <div class="jumbotron">
+    <h2>It seems like nobody is bothering you...</h2>
   </div>
 <% end %>
 

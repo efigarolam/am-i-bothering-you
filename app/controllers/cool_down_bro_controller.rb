@@ -6,14 +6,17 @@ class CoolDownBroController < ApplicationController
   end
 
   def create
-    if @bully.present?
-      complaint = Complaint.create(complaint_params)
+    complaint = Complaint.create(complaint_params)
 
-      if complaint.persisted?
-        NotifyBullyMailer.mail(complaint).deliver
-      end
+    if complaint.persisted?
+      NotifyBullyMailer.mail(complaint).deliver
+      render :index
+    else
+      render :error
     end
   end
+
+  def error; end
 
   private
 

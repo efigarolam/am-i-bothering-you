@@ -1,6 +1,18 @@
-<%= form_for(complaint) do |f| %>
-  <%= f.hidden_field :bully_id %>
-  <%= f.text_field :message %>
-  <%= f.submit :create %>
-<% end %>
+<div class="container">
+  <%= form_for(complaint) do |f| %>
+    <%= f.hidden_field :bully_id %>
+    <div class="row">
+      <div class="col-lg-12">
+        <%= f.text_field :message, class: 'form-control', placeholder: 'Be nice, please' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <p class="center">
+          <%= f.submit :create, class: 'btn btn-success btn-lg' %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>
 
