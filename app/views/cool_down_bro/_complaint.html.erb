@@ -1,0 +1,6 @@
+<tr>
+  <td><%= complaint.message %></td>
+  <td><%= link_to complaint.bully.username, root_path(bully: complaint.bully.username) %></td>
+  <td><%= complaint.created_at %></td>
+</tr>
+

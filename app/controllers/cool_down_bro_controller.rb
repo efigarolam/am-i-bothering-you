@@ -3,6 +3,7 @@ class CoolDownBroController < ApplicationController
 
   def index
     @complaint = Complaint.new(bully: @bully)
+    @complaints = Complaint.all
   end
 
   def create
