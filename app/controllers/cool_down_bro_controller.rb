@@ -11,6 +11,8 @@ class CoolDownBroController < ApplicationController
 
     if complaint.persisted?
       NotifyBullyMailer.mail(complaint).deliver
+
+      @complaints = Complaint.all
       render :index
     else
       render :error

@@ -1,0 +1,20 @@
+<div class="complaints container">
+  <% if @complaints %>
+    <h3>Existing complaints...</h3>
+    <table class="table table-bordered table-stripe">
+      <thead>
+        <tr>
+          <th>Message</th>
+          <th>Bully</th>
+          <th>Created At</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: 'complaint', collection: @complaints %>
+      </tbody>
+    </table>
+  <% else %>
+   <h3>No complaints... yet...</h3>
+  <% end %>
+</div>
+
